@@ -34,6 +34,8 @@
             this.lbRegex = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbMatchedText = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lstMatchedGroups = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbStatus
@@ -85,11 +87,30 @@
             this.lbMatchedText.TabIndex = 4;
             this.lbMatchedText.Text = "Matched Text";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Matched Groups";
+            // 
+            // lstMatchedGroups
+            // 
+            this.lstMatchedGroups.FormattingEnabled = true;
+            this.lstMatchedGroups.Location = new System.Drawing.Point(139, 134);
+            this.lstMatchedGroups.Name = "lstMatchedGroups";
+            this.lstMatchedGroups.Size = new System.Drawing.Size(141, 121);
+            this.lstMatchedGroups.TabIndex = 6;
+            // 
             // Matched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 268);
+            this.Controls.Add(this.lstMatchedGroups);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbMatchedText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbRegex);
@@ -112,6 +133,8 @@
         private System.Windows.Forms.Label lbRegex;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbMatchedText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lstMatchedGroups;
 
     }
 }

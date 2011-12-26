@@ -34,16 +34,29 @@ namespace RegexUseCase
                 lbRegex.Text = RE.ToString();
                 lbMatchedText.Text = TextToMatch;
 
-                if (RE.IsMatch(TextToMatch))
+                if (result.Success)
                 {
+                    // Reset settings
                     lbStatus.ForeColor = System.Drawing.Color.DarkGreen;
                     lbStatus.Text = "Match";
+                    label2.Visible = true;
+                    lstMatchedGroups.Visible = true;
+                    lstMatchedGroups.Items.Clear();
+
                     lbMatchedText.Text = result.Value;
+
+                    for (int i = 0; i < result.Groups.Count; i++)
+                    {
+                        lstMatchedGroups.Items.Add("Grupo " + i + ": " + result.Groups[i]);    
+                    }
+                    
                 }
                 else
                 {
                     lbStatus.ForeColor = System.Drawing.Color.Red;
                     lbStatus.Text = "Didn't match";
+                    label2.Visible = false;
+                    lstMatchedGroups.Visible = false;
                 }
             }
         }
