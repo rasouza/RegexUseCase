@@ -19,12 +19,7 @@ namespace RegexUseCase
         {
             InitializeComponent();
         }
-
-        private void MatchedText_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            this.Hide();
-        }
+        
 
         private void MatchRegex(object sender, EventArgs e)
         {
@@ -38,7 +33,7 @@ namespace RegexUseCase
                 {
                     // Reset settings
                     lbStatus.ForeColor = System.Drawing.Color.DarkGreen;
-                    lbStatus.Text = "Match";
+                    lbStatus.Text = "Matched!";
                     label2.Visible = true;
                     lstMatchedGroups.Visible = true;
                     lstMatchedGroups.Items.Clear();
@@ -61,10 +56,10 @@ namespace RegexUseCase
             }
         }
 
-        private void MatchRegex()
+        private void MatchedText_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            e.Cancel = true;
+            this.Hide();
         }
-        
     }
 }
